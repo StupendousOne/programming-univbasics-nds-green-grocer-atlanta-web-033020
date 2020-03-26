@@ -54,13 +54,13 @@ def apply_coupons(cart, coupons)
     found_item = find_item_by_name_in_collection(coupons[count][:item], cart)
     pp new_cart
     pp found_item
+    puts "im here"
     coupon_item = { 
       item: "#{found_item[:item]} /WCOUPON",
       price: coupons[count][:cost]/coupons[count][:num],
       clearance: found_item[:clearance],
       count: coupons[:num]
     }
-    puts "after coupon"
     pp new_cart
     pp coupon_item
     new_cart << coupon_item
