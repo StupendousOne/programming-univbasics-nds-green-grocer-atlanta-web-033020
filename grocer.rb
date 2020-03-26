@@ -24,7 +24,7 @@ def consolidate_cart(cart)
   
   while cart[count] do
     if find_item_by_name_in_collection(cart[count][:item], new_cart) then
-      search_count
+      search_count = 0
       while new_cart[search_count] do
         if new_cart[search_count][:item] == cart[count][:item] then
           new_cart[search_count][:count] += 1
