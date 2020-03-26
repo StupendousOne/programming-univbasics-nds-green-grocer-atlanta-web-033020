@@ -58,7 +58,7 @@ def apply_coupons(cart, coupons)
     coupon_item[:item] = "#{found_item[:item]} /WCOUPON"
     coupon_item[:price] = coupons[count][:cost]/coupons[count][:num]
     coupon_item[:clearance] = found_item[:clearance]
-    coupon_item[:count] => coupons[:num]
+    coupon_item[:count] = coupons[:num]
     
     puts "coupon_item finished"
     pp coupon_item
