@@ -52,7 +52,7 @@ def apply_coupons(cart, coupons)
   count = 0
   while coupons[count] do
     cart_count = 0
-    coupon_item = find_item_by_name_in_collection(coupons[count][:item], cart)
+    found_item = find_item_by_name_in_collection(coupons[count][:item], cart)
     pp new_cart
     coupon_item[:item] += " /WCOUPON"
     pp new_cart
