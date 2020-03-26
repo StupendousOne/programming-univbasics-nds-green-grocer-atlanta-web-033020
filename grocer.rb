@@ -23,7 +23,18 @@ def consolidate_cart(cart)
   count = 0
   
   while cart[count] do
-    if 
+    if find_item_by_name_in_collection(cart[count][:item], new_cart) then
+      search_count
+      while new_cart[search_count] do
+        if new_cart[search_count][:item] == cart[count][:item] then
+          new_cart[search_count][:count] += 1
+        end
+        search_count += 1
+      end
+    else
+      new_cart << cart[count]
+      new_cart[-1][:count] = 1
+    end
     count += 1
   end
   
@@ -34,6 +45,7 @@ def apply_coupons(cart, coupons)
   # Consult README for inputs and outputs
   #
   # REMEMBER: This method **should** update cart
+  
 end
 
 def apply_clearance(cart)
