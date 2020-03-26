@@ -48,11 +48,11 @@ def apply_coupons(cart, coupons)
   #
   # REMEMBER: This method **should** update cart
   new_cart = cart
-  coupon_item = {}
   count = 0
   
   while coupons[count] do
     cart_count = 0
+    coupon_item = {}
     found_item = find_item_by_name_in_collection(coupons[count][:item], cart)
     
     coupon_item[:item] = "#{found_item[:item]} W/COUPON"
