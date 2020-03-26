@@ -48,7 +48,7 @@ def apply_coupons(cart, coupons)
   #
   # REMEMBER: This method **should** update cart
   new_cart = cart
-  coupon_item = {}
+  coupon_item = {item: nil, price: nil, clearance: nil, count: nil}
   count = 0
   
   while coupons[count] do
