@@ -49,9 +49,8 @@ def apply_coupons(cart, coupons)
   count = 0
   while coupons[count] do
     cart_count = 0
-    item = find_item_by_name_in_collection(coupons[count][:item], new_cart)
-    pp item
-    new_cart << item
+    new_cart << find_item_by_name_in_collection(coupons[count][:item], new_cart)
+    pp new_cart
     new_cart[-1][:item] += " W/COUPON"
     new_cart[-1][:price] = coupons[count][:cost]/coupons[count][:num]
     while new_cart[cart_count] do
