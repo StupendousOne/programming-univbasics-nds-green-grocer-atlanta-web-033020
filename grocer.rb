@@ -48,24 +48,21 @@ def apply_coupons(cart, coupons)
   #
   # REMEMBER: This method **should** update cart
   new_cart = cart
-  coupon_item = {item: nil, price: nil, clearance: nil, count: nil}
+  coupon_item = {}
   count = 0
   
   while coupons[count] do
     cart_count = 0
     found_item = find_item_by_name_in_collection(coupons[count][:item], cart)
     
-    pp found_item
     pp coupon_item
     
     coupon_item[:item] = "#{found_item[:item]} /WCOUPON"
-    pp coupon_item
-    
     coupon_item[:price] = coupons[count][:cost]/coupons[count][:num]
     coupon_item[:clearance] = found_item[:clearance]
-    coupon_item[:count] = coupons[:num]
+    coupon_item[:count] = coupons[count][:num]
     
-    puts "coupon_item finished"
+    puts "coupon complete"
     pp coupon_item
     pp new_cart
     
