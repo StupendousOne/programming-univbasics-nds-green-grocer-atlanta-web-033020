@@ -51,8 +51,9 @@ def apply_coupons(cart, coupons)
   count = 0
   while coupons[count] do
     cart_count = 0
-    found_item = find_item_by_name_in_collection(coupons[count][:item], new_cart)
+    found_item = find_item_by_name_in_collection(coupons[count][:item], cart)
     pp new_cart
+    pp found_item
     coupon_item = { 
       item: "#{found_item[:item]} /WCOUPON",
       price: coupons[count][:cost]/coupons[count][:num],
