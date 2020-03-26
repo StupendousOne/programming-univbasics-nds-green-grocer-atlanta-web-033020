@@ -86,7 +86,7 @@ def apply_clearance(cart)
   while new_cart[count] do
     if new_cart[count][:clearance] then
       new_cart[count][:price] *= 0.8
-      new_cart[count][:price].round(2)
+      new_cart[count][:price] = new_cart[count][:price].round(2)
     end
     count += 1
   end
