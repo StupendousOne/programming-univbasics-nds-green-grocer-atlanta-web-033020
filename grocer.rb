@@ -61,7 +61,6 @@ def apply_coupons(cart, coupons)
     coupon_item[:count] = coupons[count][:num]
 
     new_cart << coupon_item
-    pp new_cart
     while new_cart[cart_count] do
       if new_cart[cart_count][:item] == coupons[count][:item] then
         new_cart[cart_count][:count] -= coupons[count][:num]
