@@ -59,7 +59,7 @@ def apply_coupons(cart, coupons)
       next
     end
     
-    if found_item[:count] > coupons[count][:num] then
+    #if found_item[:count] > coupons[count][:num] then
       coupon_item[:item] = "#{found_item[:item]} W/COUPON"
       coupon_item[:price] = coupons[count][:cost]/coupons[count][:num]
       coupon_item[:clearance] = found_item[:clearance]
@@ -72,7 +72,7 @@ def apply_coupons(cart, coupons)
         end
         cart_count += 1
       end
-    end
+    #end
     count += 1
   end
   pp new_cart
