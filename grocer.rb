@@ -55,15 +55,15 @@ def apply_coupons(cart, coupons)
     pp new_cart
     pp found_item
     puts "im here"
-    coupon_item = { 
-      item: "#{found_item[:item]} /WCOUPON",
-      price: coupons[count][:cost]/coupons[count][:num],
-      clearance: found_item[:clearance],
-      count: coupons[:num]
-    }
+    #coupon_item = { 
+    # item: "#{found_item[:item]} /WCOUPON",
+    #  price: coupons[count][:cost]/coupons[count][:num],
+    #  clearance: found_item[:clearance],
+    #  count: coupons[:num]
+    #}
     pp new_cart
     pp coupon_item
-    new_cart << coupon_item
+    new_cart << found_item
     while new_cart[cart_count] do
       if new_cart[cart_count][:item] == coupons[count][:item] then
         new_cart[cart_count][:count] -= coupons[count][:num]
