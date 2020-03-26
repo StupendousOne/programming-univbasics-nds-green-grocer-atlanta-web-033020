@@ -55,12 +55,14 @@ def apply_coupons(cart, coupons)
     cart_count = 0
     found_item = find_item_by_name_in_collection(coupons[count][:item], cart)
     pp found_item
-    coupon_item = { 
-      :item => "#{found_item[:item]} /WCOUPON",
-      :price => coupons[count][:cost]/coupons[count][:num],
-      :clearance => found_item[:clearance],
-      :count => coupons[:num]
-    }
+    found_item[:item] = "#{found_item[:item]} /WCOUPON"
+    
+    #coupon_item = { 
+    #  :item => "#{found_item[:item]} /WCOUPON",
+    #  :price => coupons[count][:cost]/coupons[count][:num],
+    #  :clearance => found_item[:clearance],
+    #  :count => coupons[:num]
+    #}
     puts "coupon_item finished"
     new_cart << coupon_item
     pp new_cart
